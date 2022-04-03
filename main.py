@@ -23,7 +23,7 @@ try:
             break
         else:
             print('Это не цифра.')
-        start = time.time()
+    start = time.time()
     with open("Test.txt", "r") as file: # Открытие файла.
         file.seek(0, os.SEEK_END)  # Проверка на пустоту файла.
         if file.tell():
@@ -45,6 +45,11 @@ try:
                      print("Дубликатов больше, чем K\n")
                  if len(a) - len(b) == 0:
                      print("Дубликатов нет\n")
+
+    finish = time.time()
+    result = finish - start
+    print("Program time: " + str(result) + " seconds.")
+
 except FileNotFoundError:
     print("\nФайл text.txt в директории проекта не обнаружен.\nДобавьте файл в директорию или переименуйте существующий *.txt файл.")
 except ValueError:
